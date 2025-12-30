@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top , #000000 , #000957);
+    background: linear-gradient(to top , #4689a9 , #fffbde);
 }
 .LocationFormContainer
 {
@@ -53,7 +53,7 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
-    border:1px solid gray;
+    border:2px solid black;
     border-radius: 15px;
 }
 .form
@@ -64,8 +64,28 @@
     align-items: center;
     gap: 50px;
 }
-.form h1 
+.setLocationTitle
 {
+    font-size: 50px;
     margin: 0;
-    color:orange;
+    color:#222222;
+}
+.setLocationInput
+{
+    background:none;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    width: 250px;
+    color:purple;
+    font-size: 25px;
+}
+.setLocationButton
+{
+    cursor: pointer;
+    padding: 10px;
+    font-size: 25px;
+    background-color: orange;
+    border-radius: 15px;
+    border: none;
 }

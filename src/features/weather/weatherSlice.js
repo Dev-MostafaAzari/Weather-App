@@ -9,10 +9,15 @@ const initialState = {
 const WeatherSlice = createSlice({
     name:"Weather",
     initialState,
-    reducers:{},
+    reducers:{
+        isLocation:(state)=>{
+            state.setLocation = !state.setLocation ;
+        }
+    },
 });
 
 
 
 
 export default WeatherSlice.reducer;
+export const {isLocation} = WeatherSlice.actions;

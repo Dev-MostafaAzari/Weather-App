@@ -4,11 +4,13 @@ import "../../styles/Main.css";
 import Cloud from "../../assets/Cloud/Cloud1.png";
 import States from '../States/States';
 import View from '../View/View';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { isLocation } from '../../features/weather/weatherSlice';
 
 
 const Main = () =>{
     const data = useSelector(state => state.weather);
+    const dispatch = useDispatch();
     return(
         <div className="Main">
             {data.setLocation ?
@@ -28,8 +30,8 @@ const Main = () =>{
                         <div className="LocationFormContainer">
                             <div className="form">
                                 <h1 className="setLocationTitle">Where do you live</h1>
-                                <input type="text" className="setLocationInput"/>
-                                <button type="button" className="setLocationButton">Search</button>
+                                <input type="text" className="setLocationInput" placeholder="ex : Tehran"/>
+                                <button type="button" className="setLocationButton" onClick={()=>{dispatch(isLocation())}}>Search</button>
                             </div>
                         </div>
                     </div>

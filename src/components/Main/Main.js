@@ -7,6 +7,33 @@ import View from '../View/View';
 import { useDispatch, useSelector } from 'react-redux';
 import { isLocation } from '../../features/weather/weatherSlice';
 
+const SetLocationVariants = {
+    Start:{
+        opacity:0,
+        y:-100
+    },
+    End:{
+        opacity:1,
+        y:0,
+        transition:{
+           type:"spring",
+           stiffness:100,
+        }
+    },
+};
+
+const SearchBtnVariants = {
+    hover:{
+        backgroundColor:"Green",
+        color:"White",
+        scale:1.1,
+        transition:{
+            duration:0.5,
+        }
+    }
+};
+
+
 
 const Main = () =>{
     const data = useSelector(state => state.weather);
@@ -27,13 +54,13 @@ const Main = () =>{
             :
                 <div className="MainWrapper">
                     <div className="setLocation">
-                        <div className="LocationFormContainer">
+                        <motion.div variants={SetLocationVariants} initial="Start" animate="End" className="LocationFormContainer">
                             <div className="form">
                                 <h1 className="setLocationTitle">Where do you live</h1>
                                 <input type="text" className="setLocationInput" placeholder="ex : Tehran"/>
-                                <button type="button" className="setLocationButton" onClick={()=>{dispatch(isLocation())}}>Search</button>
+                                <motion.button type="button" variants={SearchBtnVariants} whileHover="hover" className="setLocationButton" onClick={()=>{dispatch(isLocation())}}>Search</motion.button>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             }

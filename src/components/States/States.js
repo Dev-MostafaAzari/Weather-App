@@ -34,13 +34,48 @@ const States=()=>{
                     <motion.hr initial={{width:0}} whileInView={{width:"90%",transition:{type:"spring",stiffness:50}}} className="hr"/>
                     <div className="StatsData">
                         <motion.ul variants={StatsDataVariants} initial="start" whileInView="end" className="WeatherData">
-                            <motion.li variants={StatsDataVariants}>Humidity:</motion.li>
-                            <motion.li variants={StatsDataVariants}>Wind Speed:</motion.li>
-                            <motion.li variants={StatsDataVariants}>Cloudiness:</motion.li>
-                            <motion.li variants={StatsDataVariants}>Feels Like:</motion.li>
-                            <motion.li variants={StatsDataVariants}>Pressure:</motion.li>
-                            <motion.li variants={StatsDataVariants}>Visibility:</motion.li>
-                            <motion.li variants={StatsDataVariants}>UV Index:</motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>Humidity</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>Wind Speed</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>Cloudiness</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>Feels Like</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>Pressure</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>Visibility</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
+                            <motion.li variants={StatsDataVariants}>
+                                <div className="ItemData">
+                                    <h2>UV Index</h2>
+                                    <span>30</span>
+                                </div>
+                            </motion.li>
                         </motion.ul>
                     </div>
                 </div>

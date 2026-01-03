@@ -58,7 +58,6 @@
 .StatsData
 {
     width: 100%;
-    padding: 25px 20px;
 }
 .WeatherData
 {
@@ -79,7 +78,6 @@
 .ItemData
 {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

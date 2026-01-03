@@ -1,6 +1,8 @@
 import React from 'react';
 import {motion} from "framer-motion";
 import "../../styles/States.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { isLocation } from '../../features/weather/weatherSlice';
 
 const StatsDataVariants = {
     start:{
@@ -20,12 +22,14 @@ const StatsDataVariants = {
 
 
 const States=()=>{
+
+    const dispatch = useDispatch();
     return(
         <div className="StatsMain">
             <div className="StatsWrapper">
                 <div className="SearchContainer">
                     <motion.button initial={{y:-25,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:0.5}}} whileHover={{backgroundColor:"Green",scale:1.1,transition:{type:"spring",stiffness:150}}}
-                     className="SearchBtn">Search</motion.button>
+                    className="SearchBtn" onClick={()=>{dispatch(isLocation())}}>Search</motion.button>
                 </div>
                 <div className="StatsContainer">
                     <div className="StatsHeader">

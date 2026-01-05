@@ -18,34 +18,21 @@ const StatsDataVariants = {
         }
     }
 };
-const loadingParentVariants = {
-    initial:{
-        opacity:0
-    },
-    animate:{
-        opacity:1,
-        transition:{
-            staggerChildren:0.1,
-            duration:1,
-            repeat:Infinity,
-            repeatType:"mirror",
-        }
-    }
-};
 
 const States=()=>{
 
     const dispatch = useDispatch();
     const data = useSelector(state => state.weather);
+    const loadingData = useSelector(state=> state.loading);
     return(
         <div className="StatsMain">
             <div className="StatsWrapper">
                 {data.loading ?
-                    <motion.div variants={loadingParentVariants} initial="initial" animate="animate" className="LoadingContainer">
-                        <motion.div variants={loadingParentVariants}  className="Dot"></motion.div>
-                        <motion.div variants={loadingParentVariants}  className="Dot"></motion.div>
-                        <motion.div variants={loadingParentVariants}  className="Dot"></motion.div>
-                        <motion.div variants={loadingParentVariants}  className="Dot"></motion.div>
+                    <motion.div variants={loadingData.loadingVariants} initial="initial" animate="animate" className="LoadingContainer">
+                        <motion.div variants={loadingData.loadingVariants}  className="Dot"></motion.div>
+                        <motion.div variants={loadingData.loadingVariants}  className="Dot"></motion.div>
+                        <motion.div variants={loadingData.loadingVariants}  className="Dot"></motion.div>
+                        <motion.div variants={loadingData.loadingVariants}  className="Dot"></motion.div>
                     </motion.div>
                 :
                     <>

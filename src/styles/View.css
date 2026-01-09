@@ -1,0 +1,38 @@
+.ViewMain
+{
+    width: 100%;
+    height: 100%;
+}
+.ViewWrapper
+{
+    width: 100%;
+    height: 100%;
+}
+.ViewContainer
+{
+    width: 100%;
+    height: 100%;
+}
+.WeatherEffectContainer
+{
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+}
+.ViewTitleContainer
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.ViewTitle
+{
+    margin: 0;
+    z-index: 999;
+    color:darkorchid;
+    letter-spacing: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

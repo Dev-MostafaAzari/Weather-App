@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     setLocation : true,
-    loading : true,
+    loading : false,
     weather:{},
 };
 

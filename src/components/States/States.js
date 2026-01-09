@@ -42,7 +42,7 @@ const States=()=>{
                         </div>
                         <div className="StatsContainer">
                             <div className="StatsHeader">
-                                <motion.h1 initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:2}}} className="StatsTitle">Title Here</motion.h1>
+                                <motion.h1 initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:2}}} className="StatsTitle">Tehran</motion.h1>
                             </div>
                             <motion.hr initial={{width:0}} whileInView={{width:"90%",transition:{type:"spring",stiffness:50}}} className="hr"/>
                             <div className="StatsData">

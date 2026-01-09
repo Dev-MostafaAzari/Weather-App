@@ -3,6 +3,19 @@ import {motion} from "framer-motion";
 import "../../styles/View.css";
 import { useSelector } from 'react-redux';
 
+const ViewTitleVariants={
+    initial:{
+        opacity:0,
+        x:-20,
+    },
+    animate:{
+        opacity:1,
+        x:0,
+        transition:{
+            duration:1.5,
+        },
+    },
+};
 
 const View = ()=>{
     const data = useSelector(state=>state.weather);
@@ -20,7 +33,16 @@ const View = ()=>{
                     </motion.div> 
                 :
                     <>
-                        View
+                        <div className="ViewContainer">
+                            <div className="WeatherEffectContainer">
+                                {/* animation part here */}
+                                <div className="ViewTitleContainer">
+                                    <motion.div variants={ViewTitleVariants} initial="initial" whileInView="animate">
+                                        <motion.h1 variants={ViewTitleVariants} className="ViewTitle">Temperature:<motion.span variants={ViewTitleVariants}>32F</motion.span></motion.h1>
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
                     </>
                 }
             </div>

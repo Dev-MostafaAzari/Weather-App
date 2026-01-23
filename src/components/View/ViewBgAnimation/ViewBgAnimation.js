@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useRef } from 'react';
+import "../../../styles/ViewBgAnimation.css";
 
 
 
@@ -12,16 +12,20 @@ const BgAnimation = ()=>{
 
     },[])
 
-
-
+    
+    
+    //rainEffect
+    const ref = useRef();
+    
 
 
     return(
         <div id="BgAnim" className="BgContainer">
-            <canvas id="Canvas">
+            <canvas ref={ref} id="Canv">
 
             </canvas>
         </div>
+        
     )
 };
 

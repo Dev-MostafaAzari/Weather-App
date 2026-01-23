@@ -2,6 +2,7 @@ import React from 'react';
 import {motion} from "framer-motion";
 import "../../styles/View.css";
 import { useSelector } from 'react-redux';
+import BgAnimation from './ViewBgAnimation/ViewBgAnimation';
 
 const ViewTitleVariants={
     initial:{
@@ -35,7 +36,7 @@ const View = ()=>{
                     <>
                         <div className="ViewContainer">
                             <div className="WeatherEffectContainer">
-                                {/* animation part here */}
+                                <BgAnimation/>
                                 <div className="ViewTitleContainer">
                                     <motion.div variants={ViewTitleVariants} initial="initial" whileInView="animate">
                                         <motion.h1 variants={ViewTitleVariants} className="ViewTitle">Temperature:<motion.span variants={ViewTitleVariants}>32F</motion.span></motion.h1>

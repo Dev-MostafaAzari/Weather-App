@@ -12,7 +12,7 @@ const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
 const GetWeather = createAsyncThunk("Weather/GetWeather",async(Cityname)=>{
     const response = await axios.get(`${baseUrl}`,{params:{
         q:Cityname,
-        appid:"19b6531aec3aa55f3bb1d78e776312d2",
+        appid:process.env.REACT_APP_WEATHER_API_KEY,
         units:"metric"
     }});
     return response;
@@ -35,7 +35,7 @@ const WeatherSlice = createSlice({
         builder.addCase(GetWeather.fulfilled,(state,action)=>{
             state.loading = false;
             state.weather = action.payload;
-            state.loading = false;
+            state.setLocation = false;
             state.reject = false;
         });
         builder.addCase(GetWeather.rejected,(state)=>{

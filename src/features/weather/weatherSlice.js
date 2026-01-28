@@ -5,7 +5,6 @@ const initialState = {
     setLocation : true,
     loading : false,
     weather:{},
-    loacation:{},
     reject:false,
 };
 
@@ -50,4 +49,5 @@ const WeatherSlice = createSlice({
 
 
 export default WeatherSlice.reducer;
+export {GetWeather};
 export const {isLocation} = WeatherSlice.actions;

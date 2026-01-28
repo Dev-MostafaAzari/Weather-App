@@ -43,16 +43,6 @@ const Main = () =>{
             {data.setLocation ?
 
                 <div className="MainWrapper">
-                    <div className="ViewPart">
-                        <View/>
-                    </div>
-                    <div className="StatesPart">
-                        <States/>
-                    </div>
-                </div>
-
-            :
-                <div className="MainWrapper">
                     <div className="setLocation">
                         <motion.div variants={SetLocationVariants} initial="Start" animate="End" className="LocationFormContainer">
                             <div className="form">
@@ -61,6 +51,15 @@ const Main = () =>{
                                 <motion.button type="button" variants={SearchBtnVariants} whileHover="hover" className="setLocationButton" onClick={()=>{dispatch(isLocation())}}>Search</motion.button>
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+                :
+                <div className="MainWrapper">
+                    <div className="ViewPart">
+                        <View/>
+                    </div>
+                    <div className="StatesPart">
+                        <States/>
                     </div>
                 </div>
             }

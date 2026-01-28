@@ -1,10 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
     setLocation : true,
     loading : false,
     weather:{},
+    loacation:{},
+    reject:false,
 };
+
+const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
+const GetWeather = createAsyncThunk("Weather/GetWeather",async(Cityname)=>{
+    const response = await axios.get(`${baseUrl}`,{params:{
+        q:Cityname,
+        appid:"19b6531aec3aa55f3bb1d78e776312d2",
+        units:"metric"
+    }});
+    return response;
+});
 
 const WeatherSlice = createSlice({
     name:"Weather",
@@ -12,8 +25,25 @@ const WeatherSlice = createSlice({
     reducers:{
         isLocation:(state)=>{
             state.setLocation = !state.setLocation ;
-        }
+        },
     },
+    extraReducers:(builder)=>{
+        builder.addCase(GetWeather.pending,(state)=>{
+            state.loading = true;
+            state.setLocation = true;
+            state.reject = false;
+        });
+        builder.addCase(GetWeather.fulfilled,(state,action)=>{
+            state.loading = false;
+            state.weather = action.payload;
+            state.loading = false;
+            state.reject = false;
+        });
+        builder.addCase(GetWeather.rejected,(state)=>{
+            state.setLocation = true;
+            state.reject = true;
+        })
+    }
 });
 
 

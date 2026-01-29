@@ -42,7 +42,7 @@ const States=()=>{
                         </div>
                         <div className="StatsContainer">
                             <div className="StatsHeader">
-                                <motion.h1 initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:2}}} className="StatsTitle">Tehran</motion.h1>
+                                <motion.h1 initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:2}}} className="StatsTitle">{data.weather.data.name}</motion.h1>  {/* location Name */}
                             </div>
                             <motion.hr initial={{width:0}} whileInView={{width:"90%",transition:{type:"spring",stiffness:50}}} className="hr"/>
                             <div className="StatsData">
@@ -50,43 +50,37 @@ const States=()=>{
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Humidity</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.main.humidity}</span>    {/* humidity */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Wind Speed</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.wind.speed} m/s</span>
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Cloudiness</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.clouds.all}%</span>
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Feels Like</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.main.feels_like} C</span>
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Pressure</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.main.pressure}</span>
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Visibility</h2>
-                                            <span>30</span>
-                                        </div>
-                                    </motion.li>
-                                    <motion.li variants={StatsDataVariants}>
-                                        <div className="ItemData">
-                                            <h2>UV Index</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.visibility}</span>
                                         </div>
                                     </motion.li>
                                 </motion.ul>

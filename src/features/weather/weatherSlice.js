@@ -37,6 +37,7 @@ const WeatherSlice = createSlice({
             state.weather = action.payload;
             state.setLocation = false;
             state.reject = false;
+            console.log(state.weather);
         });
         builder.addCase(GetWeather.rejected,(state)=>{
             state.setLocation = true;

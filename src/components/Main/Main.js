@@ -36,7 +36,7 @@ const SearchBtnVariants = {
 
 const AlertVariant = {
     Hide:{
-        x:150,
+        x:-150,
         opacity:0,
     },
     Show:{
@@ -58,7 +58,7 @@ const Main = () =>{
             {data.setLocation ?
                 <div className="MainWrapper">
                     <div className="setLocation">
-                        <motion.div variants={AlertVariant} initial={data.reject ? "Hide" : "Show"} animate={data.reject ? "Show" : "Hide"} transition="transition" className="AlertContainer">
+                        <motion.div variants={AlertVariant} initial="Hide" animate={data.reject ? "Show" : "Hide"} transition="transition" className="AlertContainer">
                             <div className="AlertWrapper">
                                 <div className="AlertTextContainer">
                                     <p>Something went wrong please try again later</p>
@@ -69,7 +69,7 @@ const Main = () =>{
                             </div>
                         </motion.div> 
                         <motion.div variants={SetLocationVariants} initial="Start" animate="End" className="LocationFormContainer">
-                            <form className="form" onSubmit={(e)=>{e.preventDefault();/* dispatch(GetWeather(city)); */}}>
+                            <form className="form" onSubmit={(e)=>{e.preventDefault();dispatch(GetWeather(city));}}>
                                 <h1 className="setLocationTitle">Where do you live</h1>
                                 <input type="text" value={city} onChange={(e)=>{setCity(e.target.value)}} required className="setLocationInput" placeholder="ex : Tehran"/>
                                 <motion.button type="submit" variants={SearchBtnVariants} whileHover="hover" className="setLocationButton">Search</motion.button>

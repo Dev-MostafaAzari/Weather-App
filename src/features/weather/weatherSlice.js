@@ -5,7 +5,7 @@ const initialState = {
     setLocation : true,
     loading : false,
     weather:{},
-    reject:true,
+    reject:false,
 };
 
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";

@@ -5,7 +5,7 @@ const initialState = {
     setLocation : true,
     loading : false,
     weather:{},
-    reject:false,
+    reject:true,
 };
 
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
@@ -25,6 +25,9 @@ const WeatherSlice = createSlice({
         isLocation:(state)=>{
             state.setLocation = !state.setLocation ;
         },
+        alertDissmiss:(state)=>{
+            state.reject = !state.reject;
+        }
     },
     extraReducers:(builder)=>{
         builder.addCase(GetWeather.pending,(state)=>{
@@ -51,4 +54,4 @@ const WeatherSlice = createSlice({
 
 export default WeatherSlice.reducer;
 export {GetWeather};
-export const {isLocation} = WeatherSlice.actions;
+export const {isLocation,alertDissmiss} = WeatherSlice.actions;

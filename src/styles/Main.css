@@ -14,6 +14,9 @@
     align-items: center;
     overflow: hidden;
 }
+
+/* view */
+
 .ViewPart
 {
     flex:2;
@@ -25,6 +28,9 @@
     align-items: center;
     color:black;
 }
+
+/* statas */
+
 .StatesPart
 {
     flex:1;
@@ -37,6 +43,9 @@
     align-items: center;
     color:white;
 }
+
+/* ChooseLoacation */
+
 .setLocation
 {
     width: 100%;
@@ -90,6 +99,9 @@
     border-radius: 15px;
     border: none;
 }
+
+/* Loading */
+
 .LoadingContainer
 {
     display: flex;
@@ -103,4 +115,37 @@
     height: 20px;
     background-color: #4689a9;
     border-radius: 50%;
+}
+
+/* Alert */
+
+.AlertContainer
+{
+    position: absolute;
+    top:20px;
+    right: 5px;
+    border:2px rgb(3, 3, 59) dashed;
+    border-radius: 15px;
+    background: rgba(180, 10, 60, 0.6);
+}
+.AlertWrapper
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+}
+.AlertTextContainer
+{
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.AlertClBtnContainer
+{
+    position: absolute;
+    top:5px;
+    right:2px;
 }

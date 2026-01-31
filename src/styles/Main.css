@@ -54,7 +54,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top , #4689a9 , #fffbde);
+    background: linear-gradient(to top , #000957 , #000000);
 }
 .LocationFormContainer
 {
@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
-    border:2px solid black;
+    border:2px solid #E26EE5;
     border-radius: 15px;
 }
 .form
@@ -77,16 +77,16 @@
 {
     font-size: 50px;
     margin: 0;
-    color:#222222;
+    color:#E26EE5;
 }
 .setLocationInput
 {
     background:none;
-    border: 1px solid black;
+    border: 1px solid #E26EE5;
     border-radius: 15px;
     padding: 5px;
     width: 250px;
-    color:purple;
+    color:#F3F8FF;
     font-size: 25px;
     outline: none;
 }

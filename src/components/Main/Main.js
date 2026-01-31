@@ -61,7 +61,7 @@ const Main = () =>{
                         <motion.div variants={AlertVariant} initial="Hide" animate={data.reject ? "Show" : "Hide"} transition="transition" className="AlertContainer">
                             <div className="AlertWrapper">
                                 <div className="AlertTextContainer">
-                                    <p>Something went wrong please try again later</p>
+                                    <p>{data.rejectValue=="Rejected" ? "Please Enter a valid city name": data.rejectValue}</p>
                                 </div>
                                 <div className="AlertClBtnContainer">
                                     <button className="AlertClBtn" onClick={()=>{dispatch(alertDissmiss())}}>Cl</button>

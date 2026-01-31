@@ -20,10 +20,24 @@ const StatsDataVariants = {
 };
 
 const States=()=>{
-
     const dispatch = useDispatch();
     const data = useSelector(state => state.weather);
     const loadingData = useSelector(state=> state.loading);
+    function Vcheck(data) {    //VisibilityCheckFunction
+        if(5000<data<=10000)
+        {
+            return "Great";
+        }else if(3000<data<=5000)
+        {
+            return "Good";
+        }else if(1000<data<=3000)
+        {
+            return "Fogy";
+        }else if (data<=1000)
+        {
+            return "Bad";
+        };
+    };
     return(
         <div className="StatsMain">
             <div className="StatsWrapper">
@@ -56,31 +70,31 @@ const States=()=>{
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Wind Speed</h2>
-                                            <span>{data.weather.data.wind.speed} m/s</span>
+                                            <span>{data.weather.data.wind.speed} m/s</span>    {/* Wind Speed */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Cloudiness</h2>
-                                            <span>{data.weather.data.clouds.all}%</span>
+                                            <span>{data.weather.data.clouds.all}%</span>       {/* Cloudiness */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Feels Like</h2>
-                                            <span>{data.weather.data.main.feels_like} C</span>
+                                            <span>{data.weather.data.main.feels_like} C</span>  {/* Feels Like */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Pressure</h2>
-                                            <span>{data.weather.data.main.pressure}</span>
+                                            <span>{data.weather.data.main.pressure}</span>    {/* Pressure */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Visibility</h2>
-                                            <span>{data.weather.data.visibility}</span>
+                                            <span>{Vcheck(data.weather.data.visibility)}</span>     {/* Visibility */}
                                         </div>
                                     </motion.li>
                                 </motion.ul>

@@ -82,7 +82,7 @@ const States=()=>{
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Feels Like</h2>
-                                            <span>{data.weather.data.main.feels_like} C</span>  {/* Feels Like */}
+                                            <span>{data.weather.data.main.feels_like}℃</span>  {/* Feels Like */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>

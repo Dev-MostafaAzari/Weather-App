@@ -20,10 +20,24 @@ const StatsDataVariants = {
 };
 
 const States=()=>{
-
     const dispatch = useDispatch();
     const data = useSelector(state => state.weather);
     const loadingData = useSelector(state=> state.loading);
+    function Vcheck(data) {    //VisibilityCheckFunction
+        if(5000<data<=10000)
+        {
+            return "Great";
+        }else if(3000<data<=5000)
+        {
+            return "Good";
+        }else if(1000<data<=3000)
+        {
+            return "Fogy";
+        }else if (data<=1000)
+        {
+            return "Bad";
+        };
+    };
     return(
         <div className="StatsMain">
             <div className="StatsWrapper">
@@ -42,7 +56,7 @@ const States=()=>{
                         </div>
                         <div className="StatsContainer">
                             <div className="StatsHeader">
-                                <motion.h1 initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:2}}} className="StatsTitle">Tehran</motion.h1>
+                                <motion.h1 initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:2}}} className="StatsTitle">{data.weather.data.name}</motion.h1>  {/* location Name */}
                             </div>
                             <motion.hr initial={{width:0}} whileInView={{width:"90%",transition:{type:"spring",stiffness:50}}} className="hr"/>
                             <div className="StatsData">
@@ -50,43 +64,37 @@ const States=()=>{
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Humidity</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.main.humidity}</span>    {/* humidity */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Wind Speed</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.wind.speed} m/s</span>    {/* Wind Speed */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Cloudiness</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.clouds.all}%</span>       {/* Cloudiness */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Feels Like</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.main.feels_like}℃</span>  {/* Feels Like */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Pressure</h2>
-                                            <span>30</span>
+                                            <span>{data.weather.data.main.pressure}</span>    {/* Pressure */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Visibility</h2>
-                                            <span>30</span>
-                                        </div>
-                                    </motion.li>
-                                    <motion.li variants={StatsDataVariants}>
-                                        <div className="ItemData">
-                                            <h2>UV Index</h2>
-                                            <span>30</span>
+                                            <span>{Vcheck(data.weather.data.visibility)}</span>     {/* Visibility */}
                                         </div>
                                     </motion.li>
                                 </motion.ul>

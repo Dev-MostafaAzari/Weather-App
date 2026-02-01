@@ -5,18 +5,23 @@ const initialState = {
     setLocation : true,
     loading : false,
     weather:{},
-    loacation:{},
     reject:false,
+    rejectValue:"",
 };
 
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
-const GetWeather = createAsyncThunk("Weather/GetWeather",async(Cityname)=>{
-    const response = await axios.get(`${baseUrl}`,{params:{
-        q:Cityname,
-        appid:"19b6531aec3aa55f3bb1d78e776312d2",
-        units:"metric"
-    }});
-    return response;
+const GetWeather = createAsyncThunk("Weather/GetWeather",async(Cityname,{rejectWithValue})=>{
+    try{
+        const response = await axios.get(`${baseUrl}`,{params:{
+            q:Cityname,
+            appid:process.env.REACT_APP_WEATHER_API_KEY,
+            units:"metric"
+        }});
+        return response;
+    }
+    catch(error){
+        return rejectWithValue(error.response?.data?.message || "Somthing Went Wrong Please Try Again Later");
+    }
 });
 
 const WeatherSlice = createSlice({
@@ -26,6 +31,9 @@ const WeatherSlice = createSlice({
         isLocation:(state)=>{
             state.setLocation = !state.setLocation ;
         },
+        alertDissmiss:(state)=>{
+            state.reject = !state.reject;
+        }
     },
     extraReducers:(builder)=>{
         builder.addCase(GetWeather.pending,(state)=>{
@@ -36,12 +44,15 @@ const WeatherSlice = createSlice({
         builder.addCase(GetWeather.fulfilled,(state,action)=>{
             state.loading = false;
             state.weather = action.payload;
-            state.loading = false;
+            state.setLocation = false;
             state.reject = false;
+            console.log(state.weather);
         });
-        builder.addCase(GetWeather.rejected,(state)=>{
+        builder.addCase(GetWeather.rejected,(state,action)=>{
             state.setLocation = true;
             state.reject = true;
+            state.rejectValue = action.error.message;
+            console.log(state.rejectValue);
         })
     }
 });
@@ -50,4 +61,5 @@ const WeatherSlice = createSlice({
 
 
 export default WeatherSlice.reducer;
-export const {isLocation} = WeatherSlice.actions;
+export {GetWeather};
+export const {isLocation,alertDissmiss} = WeatherSlice.actions;

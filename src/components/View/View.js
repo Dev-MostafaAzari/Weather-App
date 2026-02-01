@@ -39,7 +39,7 @@ const View = ()=>{
                                 <BgAnimation/>
                                 <div className="ViewTitleContainer">
                                     <motion.div variants={ViewTitleVariants} initial="initial" whileInView="animate">
-                                        <motion.h1 variants={ViewTitleVariants} className="ViewTitle">Temperature:<motion.span variants={ViewTitleVariants}>32F</motion.span></motion.h1>
+                                        <motion.h1 variants={ViewTitleVariants} className="ViewTitle">Temperature:<motion.span variants={ViewTitleVariants}>{data.weather.data.main.temp}℃</motion.span></motion.h1>
                                     </motion.div>
                                 </div>
                             </div>

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import "../../../styles/ViewBgAnimation.css";
+import "../../../styles/RainAnimation.css";
 
 
 
-const BgAnimation = ()=>{
+const RainAnimation = ()=>{
     const ref = useRef();
     useEffect(()=>{
         const CanvTag = ref.current;
@@ -53,4 +53,4 @@ const BgAnimation = ()=>{
     )
 };
 
-export default BgAnimation;
+export default RainAnimation;

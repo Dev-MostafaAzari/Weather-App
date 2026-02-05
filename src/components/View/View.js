@@ -4,6 +4,7 @@ import "../../styles/View.css";
 import { useSelector } from 'react-redux';
 import RainAnimation from './ViewBgAnimation/RainAnimation';
 import SnowAnimation from './ViewBgAnimation/SnowAnimation';
+import ClearSky from './ViewBgAnimation/ClearSky';
 
 const ViewTitleVariants={
     initial:{
@@ -31,7 +32,7 @@ const View = ()=>{
             return <SnowAnimation/>;
         }else 
         {
-            return "null";
+            return <ClearSky/>;
         }
     };
 

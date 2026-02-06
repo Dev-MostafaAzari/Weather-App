@@ -22,9 +22,9 @@ const ClearSky = ()=>{
         <div className="ClearSkyContainer" ref={ClearSkyConRef}>
             <svg id="ClearSkySvg">
                 <circle cx={"51%"} cy={"20%"} r={100} stroke="Yellow" fill="Yellow" />
-                {ClearSkyConRef.current ? 
+                {ClearSkyConRef.current ?   //RenderCloudsWhenWidthIsNotNull
                  <>
-                    <motion.g id="Cloud1" fill="#ffffff" initial={{x:`${width}px`,y:"20%",scale:2}} animate={{x:`${width + 30}px`,transition:{duration:5,ease:"linear",repeat:Infinity,repeatType:'reverse'}}} >
+                    <motion.g id="Cloud1" fill="#ffffff" initial={{x:`${width}px`,y:"15vh",scale:2}} animate={{x:`${width + 30}px`,transition:{duration:5,ease:"linear",repeat:Infinity,repeatType:'reverse'}}} >
                         <motion.circle cx={"70"} cy={"70"} r={"20"}/>
                         <motion.circle cx={"90"} cy={"60"} r={"25"}/>
                         <motion.circle cx={"115"} cy={"70"} r={"20"}/>

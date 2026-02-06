@@ -1,4 +1,5 @@
 import Main from "./components/Main/Main";
+import ClearSky from "./components/View/ViewBgAnimation/ClearSky";
 import "./styles/App.css";
 
 function App() {

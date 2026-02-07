@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import RainAnimation from './ViewBgAnimation/RainAnimation';
 import SnowAnimation from './ViewBgAnimation/SnowAnimation';
 import ClearSky from './ViewBgAnimation/ClearSky';
+import Cloudy from './ViewBgAnimation/Cloudy';
 
 const ViewTitleVariants={
     initial:{
@@ -30,9 +31,12 @@ const View = ()=>{
         }else if(599<data && data<623)   //Snow
         {
             return <SnowAnimation/>;
-        }else 
+        }else if(data === 800)
         {
             return <ClearSky/>;
+        }else if (800<data && data<805)
+        {
+            return <Cloudy/>;
         }
     };
 

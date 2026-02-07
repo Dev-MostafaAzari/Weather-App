@@ -6,6 +6,7 @@ import RainAnimation from './ViewBgAnimation/RainAnimation';
 import SnowAnimation from './ViewBgAnimation/SnowAnimation';
 import ClearSky from './ViewBgAnimation/ClearSky';
 import Cloudy from './ViewBgAnimation/Cloudy';
+import DefaultBg from './ViewBgAnimation/Default';
 
 const ViewTitleVariants={
     initial:{
@@ -24,19 +25,21 @@ const ViewTitleVariants={
 const View = ()=>{
     const data = useSelector(state=>state.weather);
     const loadingData = useSelector(state=>state.loading);
-    const WeatherCheck = (data)=>{
+    const WeatherCheck = (data)=>{          //WeatherCheckForBgAnimationFunction
         if(200<data && data<532)    //Rain
         {
             return <RainAnimation/>;
         }else if(599<data && data<623)   //Snow
         {
             return <SnowAnimation/>;
-        }else if(data === 800)
+        }else if(data === 800)         //Clear
         {
             return <ClearSky/>;
-        }else if (800<data && data<805)
+        }else if (800<data && data<805) //Cloudy
         {
             return <Cloudy/>;
+        }else {                     // Default
+            return <DefaultBg/>;
         }
     };
 

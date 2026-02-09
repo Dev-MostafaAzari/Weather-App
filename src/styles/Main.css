@@ -124,9 +124,9 @@
     position: absolute;
     top:20px;
     right: 5px;
-    border:2px rgb(3, 3, 59) dashed;
+    border:2px rgb(3, 3, 59) solid;
     border-radius: 15px;
-    background: rgba(180, 10, 60, 0.6);
+    background: #BF092F;
 }
 .AlertWrapper
 {
@@ -149,3 +149,31 @@
     top:5px;
     right:2px;
 }
+
+/* Responsive */
+
+/*MobileScreen*/
+@media (max-width:738px){
+
+    /* setLocationPart */ 
+    .setLocation
+    {
+        padding: 15px;
+    }
+    .LocationFormContainer
+    {
+        padding: 35px;
+    }
+    .setLocationTitle
+    {
+        font-size: 30px;
+    }
+    
+    /*Alert*/
+    .AlertTextContainer
+    {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+    

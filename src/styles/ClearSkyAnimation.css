@@ -1,0 +1,16 @@
+.ClearSkyContainer
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#ClearSkySvg
+{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+}

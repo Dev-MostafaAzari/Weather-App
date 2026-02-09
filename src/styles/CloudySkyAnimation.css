@@ -1,0 +1,13 @@
+.CloudyContainer
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+#CloudySVG
+{
+    width: 100%;
+    height:100%;
+    background: linear-gradient( to bottom , #d7dbe0 , #bfc5cc);
+}

@@ -57,7 +57,7 @@ const View = ()=>{
                     <>
                         <div className="ViewContainer">
                             <div className="WeatherEffectContainer">
-                                {WeatherCheck(/* data.weather.data.weather[0].id */350)}    {/* WeatherCheck */}
+                                {WeatherCheck(data.weather.data.weather[0].id)}    {/* WeatherCheck */}
                                 <div className="ViewTitleContainer">
                                     <motion.div variants={ViewTitleVariants} className="ViewTitleInnerContainer" initial="initial" whileInView="animate">
                                         <motion.h1 variants={ViewTitleVariants} className="ViewTitle">Temperature:<motion.span variants={ViewTitleVariants}>{data.weather.data.main.temp}℃</motion.span></motion.h1>

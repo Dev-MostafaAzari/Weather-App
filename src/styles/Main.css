@@ -175,5 +175,11 @@
         font-size: 20px;
         font-weight: 500;
     }
+
+    /*Main*/
+    .MainWrapper
+    {
+        flex-direction: column;
+    }
 }
     

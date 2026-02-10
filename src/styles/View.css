@@ -53,3 +53,14 @@
     color:#1A3636;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/*Responsive*/
+/*Mobile*/
+@media (max-width:738px)
+{
+    /*ViewTitle*/
+    .ViewTitle
+    {
+        font-size: 25px;
+    }
+}

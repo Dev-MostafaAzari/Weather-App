@@ -62,13 +62,15 @@
 .WeatherData
 {
     list-style: none;
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 2px;
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 10px;
     color: lightgray;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
 }
 .WeatherData li 
 {
@@ -85,10 +87,78 @@
 }
 .ItemData h2 
 {
-    font-size: 25px;
+    font-size: 20px;
     color: gray;
 }
 .ItemData span 
 {
     color:orange;
+}
+
+/*Responsive*/
+/*Mobile*/
+@media (max-width:738px)
+{
+    .StatsTitle
+    {
+        font-size: 25px !important;
+    }
+    .WeatherData
+    {
+        font-size: 15px !important;
+        padding: 0 !important;
+    }
+    .ItemData h2 
+    {
+        font-size: 13px !important;
+    }
+    .SearchContainer
+    {
+        top:15px !important;
+        right: 10px !important;
+    }
+    .SearchBtn
+    {
+        padding: 10px !important;
+        font-size: 15px !important;
+    }
+}
+
+/*Tablet*/
+@media (max-width:1024px)
+{
+    /*Stats*/
+    .StatsTitle
+    {
+        font-size: 25px;
+    }
+    .StatsData
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .WeatherData
+    {
+        font-size: 15px;
+        padding: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        
+    }
+    .ItemData h2 
+    {
+        font-size: 12px;
+    }
+    /*SearchBtn*/
+    .SearchContainer
+    {
+        top:15px;
+        right: 10px;
+    }
+    .SearchBtn
+    {
+        padding: 10px;
+        font-size: 15px;
+    }
 }

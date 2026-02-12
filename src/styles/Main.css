@@ -147,7 +147,15 @@
 {
     position: absolute;
     top:5px;
-    right:2px;
+    right:4px;
+}
+.AlertClBtn 
+{
+    background: transparent;
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
 }
 
 /* Responsive */

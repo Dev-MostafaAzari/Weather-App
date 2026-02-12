@@ -1,4 +1,3 @@
-import React from 'react';
 import {motion} from "framer-motion";
 import "../../styles/States.css";
 import { useDispatch, useSelector } from 'react-redux';
@@ -69,7 +68,7 @@ const States=()=>{
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
-                                            <h2>Wind Speed</h2>
+                                            <h2>Wind</h2>
                                             <span>{data.weather.data.wind.speed} m/s</span>    {/* Wind Speed */}
                                         </div>
                                     </motion.li>

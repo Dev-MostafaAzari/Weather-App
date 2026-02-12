@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {motion} from "framer-motion";
 import "../../styles/Main.css";
-import Cloud from "../../assets/Cloud/Cloud1.png";
 import States from '../States/States';
 import View from '../View/View';
 import { useDispatch, useSelector } from 'react-redux';
 import {alertDissmiss } from '../../features/weather/weatherSlice';
 import { GetWeather } from '../../features/weather/weatherSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 const SetLocationVariants = {
     Start:{
@@ -64,7 +65,7 @@ const Main = () =>{
                                     <p>{data.rejectValue=="Rejected" ? "Please Enter a valid city name": data.rejectValue}</p>
                                 </div>
                                 <div className="AlertClBtnContainer">
-                                    <button className="AlertClBtn" onClick={()=>{dispatch(alertDissmiss())}}>Cl</button>
+                                    <button className="AlertClBtn" onClick={()=>{dispatch(alertDissmiss())}}><FontAwesomeIcon icon={faClose}/></button>
                                 </div>
                             </div>
                         </motion.div> 

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef , useState } from 'react';
+import { useEffect, useRef , useState } from 'react';
 import { motion} from 'framer-motion';
 import "../../../styles/ClearSkyAnimation.css";
 

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {motion} from "framer-motion";
 import "../../styles/Main.css";
-import Cloud from "../../assets/Cloud/Cloud1.png";
 import States from '../States/States';
 import View from '../View/View';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,4 +1,3 @@
-import React from 'react';
 import {motion} from "framer-motion";
 import "../../styles/States.css";
 import { useDispatch, useSelector } from 'react-redux';

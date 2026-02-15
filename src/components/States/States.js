@@ -23,15 +23,15 @@ const States=()=>{
     const data = useSelector(state => state.weather);
     const loadingData = useSelector(state=> state.loading);
     function Vcheck(data) {    //VisibilityCheckFunction
-        if(5000<data<=10000)
+        if(5000<data && data<=10000)
         {
             return "Great";
-        }else if(3000<data<=5000)
+        }else if(3000<data && data<=5000)
         {
             return "Good";
-        }else if(1000<data<=3000)
+        }else if(1000<data && data<=3000)
         {
-            return "Fogy";
+            return "Low";
         }else if (data<=1000)
         {
             return "Bad";

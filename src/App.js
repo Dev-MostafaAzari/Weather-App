@@ -1,3 +1,4 @@
+import Loading from "./components/Loading/Loading";
 import Main from "./components/Main/Main";
 import "./styles/App.css";
 

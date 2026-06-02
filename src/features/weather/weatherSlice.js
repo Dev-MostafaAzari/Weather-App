@@ -3,7 +3,7 @@ import axios from "axios";
 
 const initialState = {
     setLocation : true,
-    loading : false,
+    loading : true,
     weather:{},
     reject:false,
     rejectValue:"",

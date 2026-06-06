@@ -70,7 +70,8 @@
     right: 5px;
     border:2px rgb(3, 3, 59) solid;
     border-radius: 15px;
-    background: #BF092F;
+    background: linear-gradient(135deg , #7f1d1d , #dc2626);
+    padding: 10px;
 }
 .AlertWrapper
 {
@@ -86,6 +87,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
 }
 .AlertClBtnContainer
 {

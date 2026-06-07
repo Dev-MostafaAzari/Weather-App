@@ -3,7 +3,6 @@ import { motion} from 'framer-motion';
 import "../../../styles/ClearSkyAnimation.css";
 
 
-
 const ClearSky = ()=>{
     const ClearSkyConRef = useRef();
     const [width , setWidth] = useState();
@@ -24,13 +23,13 @@ const ClearSky = ()=>{
                 <circle cx={"51%"} cy={"20%"} r={100} stroke="Yellow" fill="Yellow" />
                 {ClearSkyConRef.current ?   //RenderCloudsWhenWidthIsNotNull
                  <>
-                    <motion.g id="Cloud1" fill="#ffffff" initial={{x:`${width}px`,y:"15vh",scale:2}} animate={{x:`${width + 30}px`,transition:{duration:5,ease:"linear",repeat:Infinity,repeatType:'reverse'}}} >
+                    <motion.g key={`Cloud-1 ${width}`} id="Cloud1" fill="#ffffff" initial={{x:`${width}px`,y:"15vh",scale:2}} animate={{x:`${width + 30}px`,transition:{duration:5,ease:"linear",repeat:Infinity,repeatType:'reverse'}}} >
                         <motion.circle cx={"70"} cy={"70"} r={"20"}/>
                         <motion.circle cx={"90"} cy={"60"} r={"25"}/>
                         <motion.circle cx={"115"} cy={"70"} r={"20"}/>
                         <motion.rect x={"70"} y={"70"} width={"45"} height={"20"}/>
                     </motion.g>
-                    <motion.g id="Cloud2" fill="#ffffff" initial={{x:`${width - 40}px`,y:"25vh",scale:2}} animate={{x:`${width - 70}px`,transition:{duration:5,ease:"linear",repeat:Infinity,repeatType:'reverse'}}} >
+                    <motion.g key={`Cloud-2 ${width}`}  id="Cloud2" fill="#ffffff" initial={{x:`${width - 40}px`,y:"25vh",scale:2}} animate={{x:`${width - 70}px`,transition:{duration:5,ease:"linear",repeat:Infinity,repeatType:'reverse'}}} >
                         <motion.circle cx={"70"} cy={"70"} r={"20"}/>
                         <motion.circle cx={"90"} cy={"60"} r={"25"}/>
                         <motion.circle cx={"115"} cy={"70"} r={"20"}/>

@@ -17,12 +17,12 @@ const Main = () =>{
                 </div>
                 :
                 <div className="MainWrapper">
-                    <div className="ViewPart">
+                    <section className="ViewPart">
                         <View/>
-                    </div>
-                    <div className="StatesPart">
+                    </section>
+                    <section className="StatesPart">
                         <States/>
-                    </div>
+                    </section>
                 </div>
             }
         </div>

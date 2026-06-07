@@ -51,7 +51,20 @@
     /*Main*/
     .MainWrapper
     {
-        flex-direction: column;
+        display: block;
+        overflow: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+    .ViewPart
+    {
+        height: 100%;
+        scroll-snap-align: start;
+    }
+    .StatesPart
+    {
+        height: 100%;
+        scroll-snap-align: start;
     }
 }
     

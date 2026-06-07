@@ -39,7 +39,7 @@ const Cloudy = ()=>{
                             <motion.circle cx={"115"} cy={"70"} r={"20"}/>
                             <motion.rect x={"70"} y={"70"} width={"45"} height={"20"}/>
                         </motion.g>
-                        <motion.circle  stroke="Yellow" initial={{fill:"Yellow",cx:`${width * 50 /100}px`,cy:"17vh",r:"75px"}} animate={{r:"65px",transition:{duration:3,ease:"easeIn",repeat:Infinity,repeatType:"reverse"}}}/>
+                        <motion.circle key={`Sun ${width}`} stroke="Yellow" initial={{fill:"Yellow",cx:`${width * 50 /100}px`,cy:"17vh",r:"75px"}} animate={{r:"65px",transition:{duration:3,ease:"easeIn",repeat:Infinity,repeatType:"reverse"}}}/>
                         <motion.g key={`Cloud-4 ${width}`} id="Cloud2" fill="#ffffff" initial={{x:`${width/3}px`,y:"7vh",scale:"3",opacity:"0.8"}} animate={{x:`${width/5}px`,transition:{duration:Math.random()*100+40,ease:"linear",repeat:Infinity,repeatType:"reverse"}}}>
                             <motion.circle cx={"70"} cy={"70"} r={"20"}/>
                             <motion.circle cx={"90"} cy={"60"} r={"25"}/>

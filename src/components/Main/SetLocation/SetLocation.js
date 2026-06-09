@@ -58,7 +58,7 @@ const SetLocation = () => {
             <motion.div variants={AlertVariant} initial="Hide" animate={data.reject ? "Show" : "Hide"} transition="transition" className="AlertContainer">
                 <div className="AlertWrapper">
                     <div className="AlertTextContainer">
-                        <p>{data.rejectValue == "Rejected" ? "Somthing Went Wrong Please Try Again Later" : data.rejectValue}</p>
+                        <p>{data.rejectValue === "Rejected" ? "Somthing Went Wrong Please Try Again Later" : data.rejectValue}</p>
                     </div>
                     <div className="AlertClBtnContainer">
                         <button className="AlertClBtn" onClick={() => { dispatch(alertDissmiss()) }}><FontAwesomeIcon icon={faClose} /></button>
@@ -67,7 +67,7 @@ const SetLocation = () => {
             </motion.div>
             <motion.div variants={SetLocationVariants} initial="Start" animate="End" className="LocationFormContainer">
                 <form className="form" onSubmit={(e) => { e.preventDefault(); dispatch(GetWeather(city)); }}>
-                    <h1 className="setLocationTitle">Where do you live</h1>
+                    <h1 className="setLocationTitle">Where To Go</h1>
                     <input type="text" value={city} onChange={(e) => { setCity(e.target.value) }} required className="setLocationInput" placeholder="ex : Tehran" />
                     <motion.button type="submit" variants={data.loading ? null : SearchBtnVariants} whileHover="hover" className="setLocationButton" disabled={data.loading ? true : false}>
                         {data.loading ? <Loading/> : "Search"}

@@ -22,6 +22,15 @@ const States=()=>{
     const dispatch = useDispatch();
     const data = useSelector(state => state.weather);
     const loadingData = useSelector(state=> state.loading);
+
+    //get local time 
+    const GetTime = (data)=>{
+        const dt = data.weather.data.dt;
+        const timezone = data.weather.data.timezone;
+        const localTime = new Date ((dt + timezone) * 1000);
+        return localTime.toUTCString();
+    }
+
     function Vcheck(data) {    //VisibilityCheckFunction
         if(5000<data && data<=10000)
         {
@@ -52,6 +61,9 @@ const States=()=>{
                         <div className="SearchContainer">
                             <motion.button initial={{y:-25,opacity:0}} whileInView={{y:0,opacity:1,transition:{duration:0.5}}} whileHover={{backgroundColor:"Green",scale:1.1,transition:{type:"spring",stiffness:150}}}
                             className="SearchBtn" onClick={()=>{dispatch(isLocation())}}>Search</motion.button>
+                        </div>
+                        <div className="TimeZoneContainer">
+                            <motion.span initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:1}}} className="TimeZone">{GetTime(data)}</motion.span>
                         </div>
                         <div className="StatsContainer">
                             <div className="StatsHeader">

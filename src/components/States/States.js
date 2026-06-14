@@ -30,7 +30,7 @@ const States=()=>{
         const localTime = new Date ((dt + timezone) * 1000);
         return localTime.toUTCString();
     }
-
+    
     function Vcheck(data) {    //VisibilityCheckFunction
         if(5000<data && data<=10000)
         {
@@ -81,7 +81,7 @@ const States=()=>{
                                     <motion.li variants={StatsDataVariants}>
                                         <div className="ItemData">
                                             <h2>Wind</h2>
-                                            <span>{data.weather.data.wind.speed} m/s</span>    {/* Wind Speed */}
+                                            <span>{data.weather.data.wind.speed} km/h</span>    {/* Wind Speed */}
                                         </div>
                                     </motion.li>
                                     <motion.li variants={StatsDataVariants}>

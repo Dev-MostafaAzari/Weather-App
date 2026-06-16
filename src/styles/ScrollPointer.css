@@ -1,0 +1,25 @@
+.ScrollPointerContainer
+{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    right: 10%;
+    bottom: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+.ScrollItem
+{
+    font-size: 40px;
+}
+
+@media (max-width:738px){
+    .ScrollPointerContainer
+    {
+        display: flex;
+    }
+}

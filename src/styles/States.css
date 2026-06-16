@@ -55,6 +55,18 @@
 {
     width: 90%;
 }
+.TimeZoneContainer
+{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+.TimeZone
+{
+    font-size: 25px;
+    color: gray;
+    font-weight: 600;
+}
 .StatsData
 {
     width: 100%;
@@ -122,7 +134,11 @@
         padding: 10px !important;
         font-size: 15px !important;
     }
-}
+    .TimeZone
+    {
+        font-size: 15px;
+    }
+}   
 
 /*Tablet*/
 @media (max-width:1024px)

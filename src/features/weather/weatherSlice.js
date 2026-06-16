@@ -50,6 +50,7 @@ const WeatherSlice = createSlice({
         builder.addCase(GetWeather.rejected,(state,action)=>{
             state.setLocation = true;
             state.reject = true;
+            state.loading = false;
             state.rejectValue = action.error.message;
         })
     }

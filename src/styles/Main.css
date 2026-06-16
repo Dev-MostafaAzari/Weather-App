@@ -27,6 +27,7 @@
     justify-content: center;
     align-items: center;
     color:black;
+    position: relative;
 }
 
 /* statas */
@@ -44,150 +45,27 @@
     color:white;
 }
 
-/* ChooseLoacation */
-
-.setLocation
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to top , #000957 , #000000);
-}
-.LocationFormContainer
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    border:2px solid #E26EE5;
-    border-radius: 15px;
-}
-.form
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-.setLocationTitle
-{
-    font-size: 50px;
-    margin: 0;
-    color:#E26EE5;
-}
-.setLocationInput
-{
-    background:none;
-    border: 1px solid #E26EE5;
-    border-radius: 15px;
-    padding: 5px;
-    width: 250px;
-    color:#F3F8FF;
-    font-size: 25px;
-    outline: none;
-}
-.setLocationButton
-{
-    cursor: pointer;
-    padding: 10px;
-    font-size: 25px;
-    background-color: orange;
-    border-radius: 15px;
-    border: none;
-}
-
-/* Loading */
-
-.LoadingContainer
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 3px;
-}
-.Dot
-{
-    width: 20px;
-    height: 20px;
-    background-color: #4689a9;
-    border-radius: 50%;
-}
-
-/* Alert */
-
-.AlertContainer
-{
-    position: absolute;
-    top:20px;
-    right: 5px;
-    border:2px rgb(3, 3, 59) solid;
-    border-radius: 15px;
-    background: #BF092F;
-}
-.AlertWrapper
-{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px;
-}
-.AlertTextContainer
-{
-    font-size: 25px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.AlertClBtnContainer
-{
-    position: absolute;
-    top:5px;
-    right:4px;
-}
-.AlertClBtn 
-{
-    background: transparent;
-    border:none;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 0;
-}
-
 /* Responsive */
 
 /*MobileScreen*/
 @media (max-width:738px){
-
-    /* setLocationPart */ 
-    .setLocation
-    {
-        padding: 15px;
-    }
-    .LocationFormContainer
-    {
-        padding: 35px;
-    }
-    .setLocationTitle
-    {
-        font-size: 30px;
-    }
-    
-    /*Alert*/
-    .AlertTextContainer
-    {
-        font-size: 20px;
-        font-weight: 500;
-    }
-
     /*Main*/
     .MainWrapper
     {
-        flex-direction: column;
+        display: block;
+        overflow: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+    .ViewPart
+    {
+        height: 100%;
+        scroll-snap-align: start;
+    }
+    .StatesPart
+    {
+        height: 100%;
+        scroll-snap-align: start;
     }
 }
     

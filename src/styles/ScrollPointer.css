@@ -17,7 +17,16 @@
     font-size: 40px;
 }
 
+/* mobile screens*/
 @media (max-width:738px){
+    .ScrollPointerContainer
+    {
+        display: flex;
+    }
+}
+
+/* Tablet Screens*/
+@media (max-width:1024px){
     .ScrollPointerContainer
     {
         display: flex;

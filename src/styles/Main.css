@@ -56,6 +56,7 @@
         overflow: scroll;
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
+        scrollbar-width: auto;
     }
     .ViewPart
     {
@@ -68,4 +69,26 @@
         scroll-snap-align: start;
     }
 }
-    
+
+/* Tablet */
+@media (max-width:1280px){
+    /*Main*/
+    .MainWrapper
+    {
+        display: block;
+        overflow: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width:thin;
+    }
+    .ViewPart
+    {
+        height: 100%;
+        scroll-snap-align: start;
+    }
+    .StatesPart
+    {
+        height: 100%;
+        scroll-snap-align: start;
+    }
+}
